@@ -105,7 +105,7 @@ form.addEventListener('submit', async function(e) {
     // Theme character counter
     const themeTextarea = document.querySelector('textarea[name="themes"]');
     themeTextarea.addEventListener('input', function() {
-        const remaining = 2000 - this.value.length;
+        const remaining = 20000 - this.value.length;
         const counter = document.getElementById('charCounter') || 
                         document.createElement('span');
         counter.id = 'charCounter';
@@ -285,7 +285,7 @@ function createResultOverlay(content) {
     copyBtn.onclick = () => {
         navigator.clipboard.writeText(content).then(() => {
             copyBtn.textContent = 'Copied!';
-            setTimeout(() => copyBtn.textContent = 'Copy to Clipboard', 2000);
+            setTimeout(() => copyBtn.textContent = 'Copy to Clipboard', 20000);
         }).catch(err => {
             copyBtn.textContent = 'Failed to copy';
         });
